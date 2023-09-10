@@ -8,13 +8,18 @@ function getRandomColor() {
     return color;
 }
 
-// Function to change the background color
-function changeBackgroundColor() {
+// Function to change both background color and text color
+function changeColors() {
     const body = document.body;
-    const newColor = getRandomColor();
-    body.style.backgroundColor = newColor;
+    const h1 = document.querySelector('h1');
+    
+    const newBackgroundColor = getRandomColor();
+    const newTextColor = getRandomColor();
+    
+    body.style.backgroundColor = newBackgroundColor;
+    h1.style.color = newTextColor;
 }
 
 // Add a click event listener to the button
 const changeColorButton = document.getElementById('changeColorButton');
-changeColorButton.addEventListener('click', changeBackgroundColor);
+changeColorButton.addEventListener('click', changeColors);
